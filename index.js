@@ -118,6 +118,14 @@ console.log("net total of profits and losses over the entire period: " + profit)
 //   - (`Total/(Number of months - 1)`)
 //------------------------------------------------------//
 
+//i'm assuming i need to count losses as a change so add that as positive value
+
+//add that to all profits
+
+//store as total change value var
+
+// "total change value var" divided by "number of months-1"
+
 //------------------------------------------------------//
 // * The greatest increase in Profit/Losses (date and difference in the amounts) over the entire period.
 //------------------------------------------------------//
