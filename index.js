@@ -132,3 +132,13 @@ console.log("total: $" + profit + "");
 
 //log average changes over whole period
 
+//------------------------------------------------------//
+// * The greatest increase in Profit/Losses (date and difference in the amounts) over the entire period.
+//------------------------------------------------------//
+
+//pick all positive numbers and store in new array 
+
+//find number in array that is farthest from 0 or highest
+
+//log value and which month from array it was
+
