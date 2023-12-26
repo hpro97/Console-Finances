@@ -124,11 +124,17 @@ console.log("net total of profits and losses over the entire period: " + profit)
 
 //store as total change value var
 
-// "total change value var" divided by "number of months-1"
+//"total change value var" divided by "number of months-1"
+
+//log average changes over whole period
 
 //------------------------------------------------------//
 // * The greatest increase in Profit/Losses (date and difference in the amounts) over the entire period.
 //------------------------------------------------------//
+
+//turn all negative numbers to positive or find number in array that is farthest from 0
+
+//log value and which month from array it was
 
 //------------------------------------------------------//
 // * The greatest decrease in Profit/Losses (date and difference in the amounts) over the entire period.
