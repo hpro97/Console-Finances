@@ -160,23 +160,21 @@ console.log("total: $" + profit + "");
 //     * How do you only print to the nearest 100th in JavaScript?
 //------------------------------------------------------//
 
-//pick all negative value in array
+//find greatest decrease from month to month (2 items in array after eachother, only comparing previous month)
+//greatest decrease should be these 2 dates
+// ['Aug-2013', 999942],
+// ['Sep-2013', -1196225],
+//difference between 999942 to -1196225 is 2196167
+//log date and difference
 
-//set all negative values to be stored in new arry only losses
+          //find out how to print to nearest 100th in JS
 
-//find lowest number or farthers away from 0
+          //to round to n decimal places
 
-//store in var
-
-//corrolate to month
-
-//add to var/ or array
-
-//print value and month
-
-//concatenation not sure why this would be used, look into at later date if something to do with months
-
-//find out how to print to nearest 100th in JS
+          // function round(num, places) {
+          //   var multiplier = Math.pow(10, places);
+          //   return Math.round(num * multiplier) / multiplier;
+          // }
 
 //------------------------------------------------------//
 // ```text
