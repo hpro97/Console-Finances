@@ -87,6 +87,8 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+console.log("Financial Analysis\n--------------------");
+
 //------------------------------------------------------//
 // * The total number of months included in the dataset.
 //------------------------------------------------------//
@@ -95,7 +97,7 @@ var finances = [
 var totalMonths = finances.length; 
 
 //logs total number of months contained in array
-console.log("Total number of months included in dataset: " + finances.length);
+console.log("Total months: " + finances.length);
 
 //------------------------------------------------------//
 // * The net total amount of Profit/Losses over the entire period.
@@ -110,13 +112,15 @@ for (var i = 0; i < totalMonths; i ++) {
   profit += finances[i][1];
 } 
 //console logs total profits/losses
-console.log("net total of profits and losses over the entire period: " + profit);
+console.log("total: $" + profit + "");
 
 //------------------------------------------------------//
 // * The average of the **changes** in Profit/Losses over the entire period.
 //   - You will need to track what the total change in Profit/Losses are from month to month and then find the average.
 //   - (`Total/(Number of months - 1)`)
 //------------------------------------------------------//
+
+//NOT SURE I UNDERSTOOD THIS, TRY TO CLARIFY//
 
 //i'm assuming i need to count losses as a change so add that as positive value
 
@@ -128,33 +132,3 @@ console.log("net total of profits and losses over the entire period: " + profit)
 
 //log average changes over whole period
 
-//------------------------------------------------------//
-// * The greatest increase in Profit/Losses (date and difference in the amounts) over the entire period.
-//------------------------------------------------------//
-
-//turn all negative numbers to positive or find number in array that is farthest from 0
-
-//log value and which month from array it was
-
-//------------------------------------------------------//
-// * The greatest decrease in Profit/Losses (date and difference in the amounts) over the entire period.
-
-//     * You will need to do some research on your own for this project!
-
-//     * Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
-
-//     * How do you only print to the nearest 100th in JavaScript?
-//------------------------------------------------------//
-
-
-//------------------------------------------------------//
-// ```text
-// Financial Analysis 
-// ----------------
-// Total Months: 86
-// Total: $38382578
-// Average Change: -2315.12
-// Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
-// Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
-// ```
-//------------------------------------------------------//
