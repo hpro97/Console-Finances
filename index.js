@@ -120,16 +120,25 @@ console.log("total: $" + profit + "");
 //   - (`Total/(Number of months - 1)`)
 //------------------------------------------------------//
 
-//NOT SURE I UNDERSTOOD THIS, TRY TO CLARIFY//
+//NOT SURE I UNDERSTOOD THIS, TRY TO CLARIFY, what im understanding wont be -2315.12//
 
-//i'm assuming i need to count losses as a change so add that as positive value
+//-------------profit sec-----------------//
 
-//add that to all profits
+//find lowest profit and highest profit store in array
+//subtract lowest from highest in array
+//store as total change profit value var
 
-//store as total change value var
+//-------------losses sec------------------//
 
-//"total change value var" divided by "number of months-1"
+//find highest and lowest loss, store in array
+//subtract highest loss and lowest
+//store number as positive var
 
+//-------------total change sec ----------//
+
+//add total change profit to total change loss
+//store as total change var
+//divide "total change" by "total months-1"
 //log average changes over whole period
 
 //------------------------------------------------------//
@@ -142,3 +151,42 @@ console.log("total: $" + profit + "");
 
 //log value and which month from array it was
 
+//------------------------------------------------------//
+// * The greatest decrease in Profit/Losses (date and difference in the amounts) over the entire period.
+
+//     * You will need to do some research on your own for this project!
+
+//     * Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
+
+//     * How do you only print to the nearest 100th in JavaScript?
+//------------------------------------------------------//
+
+//pick all negative value in array
+
+//set all negative values to be stored in new arry only losses
+
+//find lowest number or farthers away from 0
+
+//store in var
+
+//corrolate to month
+
+//add to var/ or array
+
+//print value and month
+
+//concatenation not sure why this would be used, look into at later date if something to do with months
+
+//find out how to print to nearest 100th in JS
+
+//------------------------------------------------------//
+// ```text
+// Financial Analysis 
+// ----------------
+// Total Months: 86
+// Total: $38382578
+// Average Change: -2315.12
+// Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
+// Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
+// ```
+//------------------------------------------------------//
