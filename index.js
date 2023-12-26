@@ -120,8 +120,6 @@ console.log("total: $" + profit + "");
 //   - (`Total/(Number of months - 1)`)
 //------------------------------------------------------//
 
-//NOT SURE I UNDERSTOOD THIS, TRY TO CLARIFY, what im understanding wont be -2315.12//
-
 //-------------profit sec-----------------//
 
 //find lowest profit and highest profit store in array
@@ -145,11 +143,12 @@ console.log("total: $" + profit + "");
 // * The greatest increase in Profit/Losses (date and difference in the amounts) over the entire period.
 //------------------------------------------------------//
 
-//pick all positive numbers and store in new array 
-
-//find number in array that is farthest from 0 or highest
-
-//log value and which month from array it was
+//find greatest increase from month to month (2 items in array after eachother, only comparing with previous)
+//greatest increase should be these 2 dates:
+// ['Jan-2012', -755566],
+// ['Feb-2012', 1170593],
+//-755566 to 1170593 has a difference of 1926159
+//log date and differene
 
 //------------------------------------------------------//
 // * The greatest decrease in Profit/Losses (date and difference in the amounts) over the entire period.
