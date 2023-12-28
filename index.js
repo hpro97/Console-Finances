@@ -86,6 +86,9 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+//------------------------------------------------------//
+//log as per table in README
+//------------------------------------------------------//
 
 console.log("Financial Analysis\n--------------------");
 
@@ -114,30 +117,61 @@ for (var i = 0; i < totalMonths; i ++) {
 //console logs total profits/losses
 console.log("total: $" + profit + "");
 
-//------------------------------------------------------//
+//-------------------------------------------------------------------//
+//-------------------------------------------------------------------//
 // * The average of the **changes** in Profit/Losses over the entire period.
 //   - You will need to track what the total change in Profit/Losses are from month to month and then find the average.
 //   - (`Total/(Number of months - 1)`)
-//------------------------------------------------------//
+//-------------------------------------------------------------------//
 
-//-------------profit sec-----------------//
+//---calculate monthly change for each month and store in new array---//
 
-//find lowest profit and highest profit store in array
-//subtract lowest from highest in array
-//store as total change profit value var
+//i changed to using ES6 here as some functions i found online wouln't let me use var when trying to rewcreate with my data and arrays as var
 
-//-------------losses sec------------------//
+const changeMonth = []; //define new const for monthly change
 
-//find highest and lowest loss, store in array
-//subtract highest loss and lowest
-//store number as positive var
+for (let i = 1; i < finances.length; i++) { //loop for finances array
+  const currentMonthValue = finances[i][1]; //new const for current month value in loop
+  const previousMonthValue = finances[i - 1][1]; //new const for previous month value in loop
+  const monthlyChange = currentMonthValue - previousMonthValue; //new const subtract previousmonth from current month
+  changeMonth.push(monthlyChange); //push equation to change month array
+}
 
-//-------------total change sec ----------//
+//---calculate total change from new array and store in new var---//
 
-//add total change profit to total change loss
-//store as total change var
-//divide "total change" by "total months-1"
-//log average changes over whole period
+const totalMonthlyChange = changeMonth.reduce((accumulator, currentValue) => accumulator + currentValue, 0); //new const defining TMC as: array.reduce (recieves parameters then applies mathmatical equation) inside reduce, apply accumulator(keeps track of current running total) and current value (new value being processed) then call both.
+
+//--calculate average change by dividing total change by total months-1--/
+
+const averageChange = (totalMonthlyChange / (totalMonths - 1)) //new const averageChange, dividing total change of all the months added together (totalMonthlyChange) by the number of months apart from the last one (totalMonths -1)
+
+//---------------------round number up to 100th-------------------//
+
+averageChangeRounded = Math.ceil(averageChange * 1000) / 1000; //round up with math.ciel, taking our averageChange using 1000 multiplied and divided this will account for first 3 decimal places then ciel will take the sum and round it UP to the second decimal places (as the norm when ddealing with currency)
+
+console.log("Average Change : " + averageChangeRounded.toFixed(2));//log result to the second decimal place
+
+//---------------------    OR THIS    --------------------//
+
+// or take fist months profit(1) - second months profit(2), turn into positive number and store(x). take second months profit(2) - third months profit(3), turn into positive number (y) and add to previously stored as new number(z) and keep doing for whole loop
+
+//1-2=(positive)x
+//2-3=(positive)y
+//x+y=z
+
+// ['Jan-2010', 867884],
+// ['Feb-2010', 984655],
+// ['Mar-2010', 322013],
+// ['Apr-2010', -69417],
+
+// then when loop finished take z divide by array.lenght-1
+
+// round up with ciel to closest hundreth
+
+// need this result: -2315.12
+
+//-------------------------------------------------------------------//
+//-------------------------------------------------------------------//
 
 //------------------------------------------------------//
 // * The greatest increase in Profit/Losses (date and difference in the amounts) over the entire period.
@@ -167,14 +201,6 @@ console.log("total: $" + profit + "");
 //difference between 999942 to -1196225 is 2196167
 //log date and difference
 
-          //find out how to print to nearest 100th in JS
-
-          //to round to n decimal places
-
-          // function round(num, places) {
-          //   var multiplier = Math.pow(10, places);
-          //   return Math.round(num * multiplier) / multiplier;
-          // }
 
 //------------------------------------------------------//
 // ```text
