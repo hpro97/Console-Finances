@@ -15,6 +15,7 @@ I built this project to showcase my information gathering skills alongside what 
 ## Link:
 DEPLOYED: https://hpro97.github.io/Console-Finances/<br>
 GIT REPO: https://github.com/hpro97/Console-Finances<br>
+GIT REPO FOR JS FILE: https://github.com/hpro97/Console-Finances/blob/main/index.js<br>
 
 ## Screenshot
 
