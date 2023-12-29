@@ -100,7 +100,7 @@ console.log("Financial Analysis\n--------------------");
 var totalMonths = finances.length; 
 
 //logs total number of months contained in array
-console.log("Total months: " + finances.length);
+console.log("Total months: " + totalMonths);
 
 //------------------------------------------------------//
 // * The net total amount of Profit/Losses over the entire period.
@@ -115,7 +115,7 @@ for (var i = 0; i < totalMonths; i ++) {
   profit += finances[i][1];
 } 
 //console logs total profits/losses
-console.log("total: $" + profit + "");
+console.log("Total: $" + profit + "");
 
 //-------------------------------------------------------------------//
 //-------------------------------------------------------------------//
@@ -133,7 +133,7 @@ const changeMonth = []; //define new const for monthly change
 for (let i = 1; i < finances.length; i++) { //loop for finances array
   const currentMonthValue = finances[i][1]; //new const for current month value in loop
   const previousMonthValue = finances[i - 1][1]; //new const for previous month value in loop
-  const monthlyChange = currentMonthValue - previousMonthValue; //new const subtract previousmonth from current month
+  const monthlyChange = currentMonthValue - previousMonthValue; //new const subtract previous month from current month
   changeMonth.push(monthlyChange); //push equation to change month array
 }
 
@@ -184,6 +184,22 @@ console.log("Average Change : " + averageChangeRounded.toFixed(2));//log result 
 //-755566 to 1170593 has a difference of 1926159
 //log date and differene
 
+let greatestIncrease = 0; //define let for initial greatest increase (will change after loop)
+let greatestIncreaseMonth = ''; //define greatestincreasemonth (will change after loop)
+
+for (let i = 1; i < finances.length; i++) { //standard for loop running for length but starting on index 1
+  const currentProfit = finances[i][1]; //define const inside loop currentProfit as the actual money value of the month we are on in the array whilst looping
+  const previousProfit = finances[i - 1][1]; //define const inside loop previousProfit as actual array item minus 1 [i - 1] with the data looked at being money value, so [1] as it's the second entry we're looking at
+  const difference = currentProfit - previousProfit; //define const inside loop difference as current profit (whatever the loop is currently on) - previousProfit (whatever individual profit has been previously looked at prior to this)
+
+  if (difference > greatestIncrease) { //if statement, in the case that the difference (previously defined as a new item equalling currentProfit in for loop - previousProfit in for loop) is greater than greatestIncrease (that we'll define inside the if statement)
+    greatestIncrease = difference; //greatestIncrease equals difference in the case it is more than the current greatest increase stored as defined in the if statement, whilst looping through the for loop this data is collected an updated
+    greatestIncreaseMonth = finances[i][0]; //this takes the first value (i.e the month) of the greatestIncrease value of the finances array corrolated to the second figure (dollar value) stored as the greatest increase
+  }
+}
+
+console.log("Greatest increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")"); //standar log
+
 //------------------------------------------------------//
 // * The greatest decrease in Profit/Losses (date and difference in the amounts) over the entire period.
 
@@ -191,7 +207,6 @@ console.log("Average Change : " + averageChangeRounded.toFixed(2));//log result 
 
 //     * Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
 
-//     * How do you only print to the nearest 100th in JavaScript?
 //------------------------------------------------------//
 
 //find greatest decrease from month to month (2 items in array after eachother, only comparing previous month)
@@ -200,7 +215,6 @@ console.log("Average Change : " + averageChangeRounded.toFixed(2));//log result 
 // ['Sep-2013', -1196225],
 //difference between 999942 to -1196225 is 2196167
 //log date and difference
-
 
 //------------------------------------------------------//
 // ```text
