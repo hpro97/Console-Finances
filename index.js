@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -97,7 +97,7 @@ console.log("Financial Analysis\n--------------------");
 //------------------------------------------------------//
 
 //new var for number of months
-var totalMonths = finances.length; 
+let totalMonths = finances.length; 
 
 //logs total number of months contained in array
 console.log("Total months: " + totalMonths);
@@ -107,11 +107,11 @@ console.log("Total months: " + totalMonths);
 //------------------------------------------------------//
 
 //define new var for profits before calculating losses and profit
-var profit = 0 
+let profit = 0 
 
 //for loop moving onto next entry each time
 //profit selecting only second entry in array of arrays in finances var and add them to the total value stored in profit var
-for (var i = 0; i < totalMonths; i ++) { 
+for (let i = 0; i < totalMonths; i ++) { 
   profit += finances[i][1];
 } 
 //console logs total profits/losses
@@ -126,7 +126,7 @@ console.log("Total: $" + profit + "");
 
 //---calculate monthly change for each month and store in new array---//
 
-//i changed to using ES6 here as some functions i found online wouln't let me use var when trying to rewcreate with my data and arrays as var
+//i changed to using ES6 here as some functions i found online wouln't let me use var when trying to rewcreate with my data and arrays as var, so also rewrote previous
 
 const changeMonth = []; //define new const for monthly change
 
@@ -198,15 +198,10 @@ for (let i = 1; i < finances.length; i++) { //standard for loop running for leng
   }
 }
 
-console.log("Greatest increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")"); //standar log
+console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")"); //standar log
 
 //------------------------------------------------------//
 // * The greatest decrease in Profit/Losses (date and difference in the amounts) over the entire period.
-
-//     * You will need to do some research on your own for this project!
-
-//     * Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
-
 //------------------------------------------------------//
 
 //find greatest decrease from month to month (2 items in array after eachother, only comparing previous month)
@@ -215,6 +210,23 @@ console.log("Greatest increase in Profits/Losses: " + greatestIncreaseMonth + " 
 // ['Sep-2013', -1196225],
 //difference between 999942 to -1196225 is 2196167
 //log date and difference
+
+let greatestDecrease = null; // define as null as this will change in if statement
+
+for (let i = 1; i < finances.length; i++) {
+  const currentDecreaseProfit = finances[i][1];
+  const previousDecreaseProfit = finances[i - 1][1];
+  const differenceDecrease = currentDecreaseProfit - previousDecreaseProfit;
+//pretty much the same as previous section
+
+
+  if (greatestDecrease === null || differenceDecrease < greatestDecrease)  { //If greatestDecrease is still null (i.e first time it happens) or the differenceDecrease is less than the stored greatestDecrease
+    greatestDecrease = differenceDecrease; //then the value of differenceDecrease will be stored as the new value of greatestDecrease.
+    greatestDecreaseMonth = finances[i][0] //same as before recycled to log month
+  }
+}
+
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")"); //simple log
 
 //------------------------------------------------------//
 // ```text
